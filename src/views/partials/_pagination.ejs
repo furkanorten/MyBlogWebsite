@@ -1,0 +1,29 @@
+
+<% 
+const active = activeP;
+const previous = active - 1;
+const next = parseInt(active) + 1;
+const totalPage = pageCount;
+
+%> 
+
+
+<% if (totalPage>1) { %>
+  <nav class="pagination is-medium" role="navigation" aria-label="pagination">
+    <a  <%= active != 1 ? 'href=/blog?page='+previous : ''  %>  class="pagination-previous" <%= activeP == 1 ? 'disabled' : ''  %>  >Previous</a>
+    <a <%= active != totalPage ? 'href=/blog?page='+next : ''  %> class="pagination-next"  <%= active == totalPage ? 'disabled' : '' %>   >Next</a>
+    <ul class="pagination-list">
+
+
+      <% for( let index = 1; index <= pageCount; index++ ) { %>
+        <li>
+          <a href="/blog?page=<%=index%> " class="pagination-link <%= index==activeP ? 'is-current' : ''  %>  " aria-label="Goto page "><%- index%> </a>
+        </li>
+      <% } %>
+
+
+    
+    </ul>
+  </nav>
+<% } %>
+

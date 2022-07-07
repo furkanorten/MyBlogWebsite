@@ -1,0 +1,39 @@
+<% 
+let height = ''
+
+if(index == undefined){
+    height = '600'
+}else{
+  const mod = index %10
+
+  height = "60"+mod
+
+    
+}
+%> 
+
+<div class="card">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img src="https://source.unsplash.com/random/800x<%= height%>?technology" alt="Placeholder image">
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="media">
+       
+        <div class="media-content">
+          <p class="title is-4"><%- article.title.rendered  %> </p>
+        </div>
+      </div>
+  
+      <div class="content">
+           
+        <%- index==undefined ? article.content.rendered :  article.excerpt.rendered.slice(0,65) %> 
+
+         <% if (index !== undefined) { %>
+           <a href="/blog/<%=article.id%> "> Read More</a>
+         <% } %>
+       
+      </div>
+    </div>
+  </div>

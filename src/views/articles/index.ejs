@@ -1,0 +1,28 @@
+<%- include('../partials/_header') %> 
+
+
+<div class="columns is-multiline">
+<% articles.forEach((article,index) => { %>
+    <div class="column is-4 ">
+        <%- include('../partials/_articleCard',{article,index})  %> 
+    </div>
+<% }) %>
+</div>
+
+
+
+<% 
+const pageCount = paging['x-wp-totalpages'];
+const dataCount = paging['x-wp-total'];
+const activeP = activePage;
+
+
+%> 
+
+<div class="block"></div>
+<div class="column is-12">
+<%- include('../partials/_pagination', {dataCount, pageCount, activeP})  %> 
+
+</div>
+
+<div class="block"></div>
