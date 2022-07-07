@@ -1,5 +1,5 @@
 # MyBlogWebsite
-Example of a blog website which is developed with Node JS
+Example of a blog website which is developed with NodeJS, ExpressJS and EJS
 ### Installation
 ##### install node modules with npm install command
 ##### run the website with npm start command
